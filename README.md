@@ -1,6 +1,3 @@
-Workshop, 7 June 2021, on:
+Workshop 17 September 2021, on:
 
-- Introduction to trade data
-- Calculating RCAs, product co-occurences and product proximity, density / density regressions
-- Product space visualization
-- Calculating Economic Complexity / Product Complexity
+Using Python to calculate and explore Xcps/RCAs/Mcps and proximities in trade and patents, visualize trade data in the product space, calculate ECIs/PCIs and ECIs weighted by destination (focusing on Ukraine) and do very basic geovisualization.
