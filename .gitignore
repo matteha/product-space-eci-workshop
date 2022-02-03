@@ -5,3 +5,4 @@ trade_without_labels.parquet
 patstat_year_country_tech_inventor_locations.dta
 patstat_year_country_tech_patent_office_locations.dta
 backup_old/
+sessions_others
