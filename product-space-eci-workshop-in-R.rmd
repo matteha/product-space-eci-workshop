@@ -1202,6 +1202,10 @@ hcmap(
 ) %>% hc_colorAxis(minColor = "orange", maxColor = "red")
 ```
 
+```{r}
+head(df_ukr_ecimc)
+```
+
 Highly complex products are typically destined for the Russian market, which is also one of the largest importers of products from Ukraine.
 
 The detoriation in relations with Russia led to a significant decline in exports there from 2011 onwards:
@@ -1523,6 +1527,5 @@ head(df_ukr,20)
 
 
 Contact me at matte \_ hartog@hks.harvard.edu or drop by the fifth floor in the Rubenstein building, office 502.
-ma
 
 
