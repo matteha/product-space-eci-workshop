@@ -4,10 +4,18 @@
 
 from ecomplexity import proximity
 from ecomplexity import density
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"  # Show all output in Jupyter kernel
 
-#trade_cols = {'time':'year', 'loc':'country_code', 'prod':'product_code', 'val':'export_value'}
-dft = df_rca[df_rca['year']==1995].copy()
-#dft.rename(columns={f'product_name':f'product'}, inplace=True)
+import pandas as pd 
+
+# Load trade data
+df = pd.read_csv('/Users/admin/Dropbox/trade.csv')
+
+# keep 5 years
+years = [1995,2000,2005,2010,2015]
+df = df[df['year'].isin(years)]
+
 trade_cols = {'time':'year', 'loc':'country_name', 'prod':'product_name', 'val':'export_value'}
 df_condp2 = proximity(dft, trade_cols)
 df_condp2.rename(columns={f'proximity':f'phi'}, inplace=True)
