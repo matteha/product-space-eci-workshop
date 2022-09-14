@@ -2,30 +2,41 @@
 # Install ecomplexity: pip3 install ecomplexity in terminal
 !pip3 install ecomplexity
 
-from ecomplexity import proximity
-from ecomplexity import density
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"  # Show all output in Jupyter kernel
 
 import pandas as pd 
+pd.set_option('display.max_columns', 500) # Broaden pandas display in jupyter console
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_colwidth',50)
+
+from ecomplexity import ecomplexity
+from ecomplexity import proximity
 
 # Load trade data
 df = pd.read_csv('/Users/admin/Dropbox/trade.csv')
 
-# keep 5 years
+df.sample(n=10)
+
+# keep 5 years 
 years = [1995,2000,2005,2010,2015]
 df = df[df['year'].isin(years)]
 
-trade_cols = {'time':'year', 'loc':'country_name', 'prod':'product_name', 'val':'export_value'}
-df_condp2 = proximity(dft, trade_cols)
-df_condp2.rename(columns={f'proximity':f'phi'}, inplace=True)
-df_condp2.rename(columns={f'product_name_1':f'product_1'}, inplace=True)
-df_condp2.rename(columns={f'product_name_2':f'product_2'}, inplace=True)
+# To use py-ecomplexity, specify the following columns
+trade_cols = {'time':'year',
+              'loc':'country_name',
+              'prod':'product_name',
+              'val':'export_value'
+             }
 
-df_C = pd.merge(df_cppt,df_condp2,how='left',on=[f'product_1','product_2'],indicator=True)
-df_C['_merge'].value_counts()
-df_C.sample(n=20)
-#+END_SRC
+# Run ecomplexity
+# NOTE : documentation
+df2 = ecomplexity(df, trade_cols)
+
+# Show results
+df2.sample(n=10)
+
 
 
 ** Side note: Normalize product co-occurences (cpp) as in Neffke 2017 :noexport:
