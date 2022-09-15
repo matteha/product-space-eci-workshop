@@ -20,6 +20,7 @@ import seaborn as sns
 sns.set_style("whitegrid") # White background plots: works on dark background
 
 from ecomplexity import ecomplexity
+from ecomplexity import proximity
 
 # Load trade data
 df = pd.read_parquet("/n/hausmann_lab/lab/IPUMS/moved/temp3/trade.parquet")
@@ -82,7 +83,6 @@ qt_low = df2[df2["year"] == 2015]["pci"].quantile(0.05)
 df2[(df2["pci"] < qt_low) & (df2["exports_py"] > 10000000) & (df2["year"] == 2015)][
     ["product_name"]
 ].drop_duplicates()[0:10]
-# WARNING: update this code in notebook!
 
 
 # NOTE: Ukraine
@@ -136,4 +136,3 @@ dft = dft[dft["year"] == 2015]
 dft.sort_values(by=["pci"], ascending=False, inplace=True)
 dft.reset_index(inplace=True, drop=True)
 dft[0:10][["product_name", "pci"]]
-!
