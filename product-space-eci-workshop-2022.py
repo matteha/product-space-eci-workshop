@@ -1,8 +1,8 @@
 # Install ecomplexity: pip3 install ecomplexity in terminal
 # !pip3 install ecomplexity
 
-import os
-import sys
+# import os
+# import sys
 
 from IPython.core.interactiveshell import InteractiveShell
 
@@ -20,7 +20,7 @@ import seaborn as sns
 sns.set_style("whitegrid") # White background plots: works on dark background
 
 from ecomplexity import ecomplexity
-from ecomplexity import proximity
+# from ecomplexity import proximity
 
 # Load trade data
 df = pd.read_parquet("/n/hausmann_lab/lab/IPUMS/moved/temp3/trade.parquet")
