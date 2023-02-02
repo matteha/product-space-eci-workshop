@@ -912,7 +912,7 @@ and clicking "Save Image", or by editing the output_image_file parameter above')
 
 Product space image:
 
-![img](https://www.dropbox.com/s/vnlahccey2x2gvh/product_space.png?dl=1)
+![img](https://www.dropbox.com/s/t1w6icpqd4w9wcp/product_space_v2.png?dl=1)
 
 
 ## -----------&#x2013;&#x2014; Break: Excercise 1 ------------------
@@ -969,7 +969,7 @@ Do you notice a difference with 1995?
 ## Predicting diversification of countries: densities / density regressions
 
 
-Shreyas will cover this.
+Shreyas will cover this in Review Session 6.
 
 
 ## Calculating Economic Complexity / Product Complexity
