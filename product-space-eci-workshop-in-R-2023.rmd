@@ -1,6 +1,8 @@
 ---
-title: An R Markdown document converted from "~/Dropbox/proj/org_zhtml_projects/product-space-eci-workshop/product-space-eci-workshop-in-R-2023.ipynb"
-output: html_document
+title: "An R Markdown document converted from "~/Dropbox/proj/org_zhtml_projects/product-space-eci-workshop/product-space-eci-workshop-in-R-2023.ipynb""
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 Trade and patents: RCAs, proximities, product space and economic complexity in R
