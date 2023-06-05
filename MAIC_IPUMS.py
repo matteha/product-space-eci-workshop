@@ -6,9 +6,9 @@ import random
 from lifelines import CoxPHFitter
 
 
-def calculate_MAICS_weights(a, X):
+def calculate_MAIC_weights(a, X):
     """
-    Calculates the weights using the MAICS method.
+    Calculates the weights using the MAIC method.
 
     Args:
         a (numpy.ndarray): The coefficient array.
@@ -20,9 +20,9 @@ def calculate_MAICS_weights(a, X):
     return np.sum(np.exp(np.matmul(X, a)))
 
 
-def calculate_MAICS_gradients(a, X):
+def calculate_MAIC_gradients(a, X):
     """
-    Calculates the gradients for the MAICS weights.
+    Calculates the gradients for the MAIC weights.
 
     Args:
         a (numpy.ndarray): The coefficient array.
@@ -108,11 +108,11 @@ X = df_c[variables_maic].values
 
 # using scipy
 res = minimize(
-    fun=calculate_MAICS_weights,
+    fun=calculate_MAIC_weights,
     x0=initial_parameters,
     args=(df_c[variables_maic].values),
     method="BFGS",
-    jac=calculate_MAICS_gradients,
+    jac=calculate_MAIC_gradients,
 )
 if res["success"] == False:
     print("not converged, stop")
